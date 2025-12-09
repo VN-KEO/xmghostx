@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mghostx-server:
+    build: .
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+    environment:
+      - MGHOSTX_CONFIG=/config/server.yaml
+    command: ["./mghostx-server", "--port", "8443"]
+
+  mghostx-agent:
+    build: .
+    volumes:
+      - /:/host:ro
+      - /proc:/host/proc:ro
+    environment:
+      - MGHOSTX_SERVER=http://mghostx-server:8443
+    command: ["./mghostx-agent", "--server", "http://mghostx-server:8443"]
+    depends_on:
+      - mghostx-server
