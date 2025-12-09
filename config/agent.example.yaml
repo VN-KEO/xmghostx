@@ -1,0 +1,12 @@
+agent:
+  id: "agent-001"
+  name: "localhost"
+  server_url: "https://localhost:8443"
+  
+  collectors:
+    - processes
+    - network
+    - filesystem
+    - users
+  
+  heartbeat_interval: 30s
