@@ -1,0 +1,13 @@
+agent:
+  id: "auto-generated"
+  name: "localhost"
+  server: "http://localhost:8443"
+  
+collectors:
+  - processes
+  - network
+  - system
+  - users
+
+heartbeat_interval: 30
+log_level: "info"
