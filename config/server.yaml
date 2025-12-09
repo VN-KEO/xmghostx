@@ -1,0 +1,16 @@
+server:
+  host: "0.0.0.0"
+  port: "8443"
+  tls_enabled: false
+
+database:
+  type: "sqlite"
+  path: "/var/lib/mghostx/mghostx.db"
+
+logging:
+  level: "info"
+  file: "/var/log/mghostx/server.log"
+
+security:
+  require_auth: false
+  admin_password: "changeme"
