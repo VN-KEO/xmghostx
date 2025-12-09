@@ -1,0 +1,19 @@
+server:
+  host: "0.0.0.0"
+  port: 8443
+  tls:
+    enabled: true
+    cert: "certs/server.crt"
+    key: "certs/server.key"
+  
+  database:
+    type: "sqlite"
+    path: "data/mghostx.db"
+  
+  auth:
+    jwt_secret: "change-this-in-production"
+    admin_password: "admin123"
+  
+  ai:
+    enabled: false
+    openai_api_key: ""
